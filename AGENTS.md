@@ -35,6 +35,7 @@ The goal of this file is to capture the **shared** best-practice patterns across
 All DREAM mods in this workspace ship a standardized `dev/` toolchain:
 
 - `dev/build-assets.sh` exports `512.svg`, `256.svg`, `64.svg` to `poster.png`, `preview.png`, `icon_64.png`.
+  - Asset exports are incremental (skip if outputs are newer than SVGs); use `FORCE_ASSETS=1` to force a rebuild.
 - `dev/sync-workshop.sh` deploys to `~/Zomboid/Workshop` (default workflow).
 - `dev/sync-mods.sh` exists as an optional alternative (set `TARGET=mods` for watchers).
 - `dev/watch.sh` watches and re-syncs on change (defaults: `TARGET=workshop`, `WATCH_MODE=payload`).
@@ -59,4 +60,3 @@ Workspace-wide helpers:
 - Prefer small, focused commits.
 - Avoid destructive history operations (no `git reset --hard` / force-push) unless explicitly requested.
 - For packaging repos, prefer contributing changes to upstream libraries where applicable, then bump the submodule pointer.
-

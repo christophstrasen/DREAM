@@ -85,12 +85,23 @@ esac
 echo "Watching paths:"
 printf '  - %s\n' "${WATCH_PATHS[@]}"
 
-inotifywait -m -q -r -e close_write,modify,attrib,create,delete,move \
+# Avoid `attrib` events: some tooling updates atime/metadata on read, which can self-trigger loops.
+# Avoid `modify` events: they can fire many times during a single save; `close_write`/`move` is enough.
+inotifywait -m -q -r -e close_write,create,delete,move \
   --format '%w%f' \
   "${WATCH_PATHS[@]}" 2>/dev/null |
   while IFS= read -r path; do
     if [ "$VERBOSE" = "1" ]; then
       echo "[change] $path"
     fi
+
+    # Coalesce short bursts of file events into a single sync run.
+    # (Editors often trigger multiple events per save.)
+    while IFS= read -r -t 0.1 path; do
+      if [ "$VERBOSE" = "1" ]; then
+        echo "[change] $path"
+      fi
+    done
+
     sync_all
   done
