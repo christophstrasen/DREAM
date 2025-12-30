@@ -7,7 +7,15 @@ This repo is **not** a mod. It contains the mod repos as git submodules and prov
 - one-command sync to `~/Zomboid/Workshop` (default)
 - one-terminal watcher that re-syncs all mods on change
 
-Included are:
+## Documentation scope
+
+- **User-facing suite overview + curated examples:** `external/pz-dream/` (DREAM meta-mod), and its Workshop item.
+- **Module-specific docs and APIs:** in each module repo under `external/<RepoName>/`.
+- **Maintainer coordination:** this repo (scripts, submodule policy, dev standards, and the workspace logbook).
+
+Maintainer logbook: `logbook.md`.
+
+## Included repos
 
 
 
