@@ -38,7 +38,7 @@ Notes:
 
 ## Local deploy targets
 
-We support two destinations:
+We support two destinations (default is the Workshop wrapper folder):
 
 1) **Workshop wrapper folder** (default for dev scripts)
 
@@ -49,7 +49,7 @@ We support two destinations:
   Contents/mods/<ModId>/...
 ```
 
-2) **Mods folder**
+2) **Optional: Mods folder** (set `TARGET=mods`)
 
 ```
 ~/Zomboid/mods/<ModId>/...
@@ -72,7 +72,7 @@ Each mod repo ships a common set of scripts under `dev/`:
     - `preview.png` (wrapper preview)
 - `dev/sync-workshop.sh` (default target)
   - Builds assets (and any generated Lua payload for packaging repos), then syncs to the Workshop wrapper.
-- `dev/sync-mods.sh`
+- `dev/sync-mods.sh` (optional)
   - Builds assets (and any generated Lua payload for packaging repos), then syncs to `~/Zomboid/mods`.
 - `dev/watch.sh`
   - Watches the repo payload (or the whole repo) and re-syncs on change.
