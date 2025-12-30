@@ -7,13 +7,25 @@ This repo is **not** a mod. It contains the mod repos as git submodules and prov
 - one-command sync to `~/Zomboid/Workshop` (default)
 - one-terminal watcher that re-syncs all mods on change
 
-Included mods:
-- `WorldObserver`
-- `PromiseKeeper`
-- `SceneBuilder`
-- `reactivex` (`pz-reactivex`)
-- `LQR` (`pz-lqr`)
+Included are:
+
+
+
+**Main modules**
 - `DREAM` (`pz-dream`)
+  - Convenient "bundle" that requires all other modules.
+  - Comes with extra examples and high level intro.
+- `WorldObserver` [![CI](https://github.com/christophstrasen/WorldObserver/actions/workflows/ci.yml/badge.svg)](https://github.com/christophstrasen/WorldObserver/actions/workflows/ci.yml)
+  - A cooperative *world-sensing engine*.
+- `PromiseKeeper` [![CI](https://github.com/christophstrasen/PromiseKeeper/actions/workflows/ci.yml/badge.svg)](https://github.com/christophstrasen/PromiseKeeper/actions/workflows/ci.yml)
+  - A stateful situation-to-action orchestrator.
+- `SceneBuilder`
+  - A declarative scene composition framework.
+
+**Mandatory but less "modder-facing" libraries**
+- `LQR` (`pz-lqr`)  [![CI](https://github.com/christophstrasen/LQR/actions/workflows/ci.yml/badge.svg)](https://github.com/christophstrasen/LQR/actions/workflows/ci.yml)
+- `reactivex` (`pz-reactivex`)
+
 
 ## Clone
 
