@@ -16,3 +16,7 @@
 [submodule "external/SceneBuilder"]
 	path = external/SceneBuilder
 	url = git@github.com:christophstrasen/SceneBuilder.git
+[submodule "external/DREAMBase"]
+	path = external/DREAMBase
+	url = git@github.com:christophstrasen/DREAMBase.git
+	branch = main
