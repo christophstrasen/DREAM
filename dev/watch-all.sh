@@ -29,6 +29,13 @@ $REPO_ROOT/external/PromiseKeeper/256.svg
 $REPO_ROOT/external/PromiseKeeper/512.svg
 $REPO_ROOT/external/PromiseKeeper/64.svg
 
+$REPO_ROOT/external/SceneBuilder/Contents/mods/SceneBuilder
+$REPO_ROOT/external/SceneBuilder/workshop.txt
+$REPO_ROOT/external/SceneBuilder/preview.png
+$REPO_ROOT/external/SceneBuilder/256.svg
+$REPO_ROOT/external/SceneBuilder/512.svg
+$REPO_ROOT/external/SceneBuilder/64.svg
+
 $REPO_ROOT/external/pz-reactivex/Contents/mods/reactivex
 $REPO_ROOT/external/pz-reactivex/workshop.txt
 $REPO_ROOT/external/pz-reactivex/preview.png

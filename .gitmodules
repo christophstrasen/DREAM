@@ -13,3 +13,6 @@
 [submodule "external/pz-dream"]
 	path = external/pz-dream
 	url = git@github.com:christophstrasen/pz-dream.git
+[submodule "external/SceneBuilder"]
+	path = external/SceneBuilder
+	url = git@github.com:christophstrasen/SceneBuilder.git
