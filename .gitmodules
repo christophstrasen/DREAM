@@ -1,0 +1,15 @@
+[submodule "external/WorldObserver"]
+	path = external/WorldObserver
+	url = git@github.com:christophstrasen/WorldObserver.git
+[submodule "external/PromiseKeeper"]
+	path = external/PromiseKeeper
+	url = git@github.com:christophstrasen/PromiseKeeper.git
+[submodule "external/pz-reactivex"]
+	path = external/pz-reactivex
+	url = git@github.com:christophstrasen/pz-reactivex.git
+[submodule "external/pz-lqr"]
+	path = external/pz-lqr
+	url = git@github.com:christophstrasen/pz-lqr.git
+[submodule "external/pz-dream"]
+	path = external/pz-dream
+	url = git@github.com:christophstrasen/pz-dream.git

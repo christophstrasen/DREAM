@@ -1,0 +1,14 @@
+{
+  "folders": [
+    {
+      "path": "."
+    }
+  ],
+  "settings": {
+    "Lua.misc.executablePath": "/run/current-system/sw/bin/lua-language-server",
+    "stylua.styluaPath": "/run/current-system/sw/bin/stylua",
+    "vim.enableNeovim": true,
+    "vim.disableExtension": true
+  }
+}
+
