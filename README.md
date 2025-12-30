@@ -19,7 +19,7 @@ Note: avoid `--recursive` unless you explicitly want nested submodules inside th
 
 ## Local deploy
 
-One-off deploy all mods into `~/Zomboid/mods`:
+One-off deploy all mods into `~/Zomboid/Workshop`:
 
 ```bash
 ./dev/sync-all.sh
@@ -37,3 +37,4 @@ Run loader smoke test (after syncing):
 ./dev/smoke.sh
 ```
 
+Tip: you can switch the destination with `TARGET=mods` if you prefer `~/Zomboid/mods`.
