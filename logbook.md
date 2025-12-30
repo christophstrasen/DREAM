@@ -35,3 +35,17 @@ This workspace exists so maintainers can co-develop the repos together (sync/wat
 - DREAM (meta-mod, user-facing suite entrypoint): https://github.com/christophstrasen/pz-dream
 - WorldObserver logbook (module-internal): https://github.com/christophstrasen/WorldObserver/blob/main/docs_internal/logbook.md
 
+## Day 1 — 2025-12-30 (continued)
+
+### Progress highlights
+- SceneBuilder Build 42.13 compatibility work: surface-aware placement now uses `sq:has("IsTable")` + `IsoObject:getSurfaceOffsetNoTable()` (and drops deprecated `Val("Surface")` usage).
+- Reduced “bespoke heuristics” in the suite toolchain by fixing the `dev/watch-all.sh` runaway retrigger loop (asset rebuilding caused self-triggering).
+
+### Difficulties / blockers
+- 
+
+### Learnings
+- Prefer vanilla placement primitives when available (they encode Build 42 rules we don’t want to re-implement).
+
+### Major decisions
+- For the suite, treat engine flags and engine-derived offsets as authoritative (e.g. `IsTable` / `getSurfaceOffsetNoTable()`), and keep custom datasets only for what the engine doesn’t provide (safe X/Y placement boxes).
