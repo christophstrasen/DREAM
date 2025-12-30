@@ -38,6 +38,7 @@ ensure_nested_submodules
 run_sync "WorldObserver" "WorldObserver"
 run_sync "PromiseKeeper" "PromiseKeeper"
 run_sync "SceneBuilder" "SceneBuilder"
+run_sync "DREAMBase" "DREAMBase"
 run_sync "pz-reactivex" "reactivex"
 run_sync "pz-lqr" "LQR"
 run_sync "pz-dream" "DREAM"

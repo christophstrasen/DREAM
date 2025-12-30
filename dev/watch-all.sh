@@ -36,6 +36,13 @@ $REPO_ROOT/external/SceneBuilder/256.svg
 $REPO_ROOT/external/SceneBuilder/512.svg
 $REPO_ROOT/external/SceneBuilder/64.svg
 
+$REPO_ROOT/external/DREAMBase/Contents/mods/DREAMBase
+$REPO_ROOT/external/DREAMBase/workshop.txt
+$REPO_ROOT/external/DREAMBase/preview.png
+$REPO_ROOT/external/DREAMBase/256.svg
+$REPO_ROOT/external/DREAMBase/512.svg
+$REPO_ROOT/external/DREAMBase/64.svg
+
 $REPO_ROOT/external/pz-reactivex/Contents/mods/reactivex
 $REPO_ROOT/external/pz-reactivex/workshop.txt
 $REPO_ROOT/external/pz-reactivex/preview.png
