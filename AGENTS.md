@@ -1,0 +1,62 @@
+# DREAM-Workspace — Agent Guide
+
+This repo is a **maintainer convenience workspace** for co-developing the DREAM suite via git submodules.
+
+The goal of this file is to capture the **shared** best-practice patterns across the DREAM repos, without overwriting repo-specific rules.
+
+## Priority and scope
+
+- **Priority:** system > developer > `AGENTS.md` > `.aicontext/*` > task instructions > file-local comments.
+- **Scope:** this file applies to `DREAM-Workspace/` itself.
+- **Submodules:** when editing code inside `external/*`, treat that repo’s own guidance as authoritative:
+  - Load that repo’s `.aicontext/context.md` (if present).
+  - Obey that repo’s `AGENTS.md` (if present).
+
+## Interaction style (common across DREAM repos)
+
+- Keep responses direct; avoid flattery.
+- If something is unclear or ambiguous, ask rather than guessing.
+- Preserve behavior when refactoring unless explicitly asked; call out intentional behavior changes.
+- Bias for simplicity and minimal changes; avoid speculative “future-proofing”.
+
+## Project Zomboid + Lua constraints (shared baseline)
+
+- Target runtime is **Project Zomboid Build 42** (Lua 5.1 / Kahlua).
+- Keep code compatible with **vanilla Lua 5.1** where feasible (tests/smoke runs outside the engine).
+- Keep `require()` paths valid for Build 42:
+  - Don’t rely on `init.lua` being special (PZ does not auto-load `init.lua`).
+  - Prefer slash-separated require paths; avoid relying on `package.path` hacks.
+  - Avoid meta-table “magic” (`setmetatable`) unless explicitly requested.
+- Use repo-provided logging utilities (don’t add ad-hoc `print` spam).
+- Prefer EmmyLua doctags for public-facing functions/APIs.
+
+## Standard local dev pipeline (shared)
+
+All DREAM mods in this workspace ship a standardized `dev/` toolchain:
+
+- `dev/build-assets.sh` exports `512.svg`, `256.svg`, `64.svg` to `poster.png`, `preview.png`, `icon_64.png`.
+- `dev/sync-workshop.sh` deploys to `~/Zomboid/Workshop` (default workflow).
+- `dev/sync-mods.sh` exists as an optional alternative (set `TARGET=mods` for watchers).
+- `dev/watch.sh` watches and re-syncs on change (defaults: `TARGET=workshop`, `WATCH_MODE=payload`).
+
+Workspace-wide helpers:
+
+- `./dev/sync-all.sh` deploys all mods (default: Workshop).
+- `./dev/watch-all.sh` watches all mods and re-syncs all on change.
+- `./dev/smoke.sh` runs the suite loader smoke check (via WorldObserver’s smoke script).
+
+## Tests (shared expectations)
+
+- If a repo has `busted` tests, run them when changing logic:
+  - WorldObserver: `busted tests`
+  - PromiseKeeper: `busted tests`
+- After changes that affect packaging / `require()` paths / mod layout, run:
+  - `DREAM-Workspace/dev/sync-all.sh`
+  - `DREAM-Workspace/dev/smoke.sh`
+
+## Git hygiene (shared)
+
+- Prefer small, focused commits.
+- Avoid destructive history operations (no `git reset --hard` / force-push) unless explicitly requested.
+- For packaging repos, prefer contributing changes to upstream libraries where applicable, then bump the submodule pointer.
+
