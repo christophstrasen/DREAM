@@ -18,27 +18,30 @@ Maintainer logbook: `logbook.md`.
 ## Included repos
 
 **Main modules**
-- `DREAM` (`pz-dream`) [![CI](https://github.com/christophstrasen/pz-dream/actions/workflows/ci.yml/badge.svg)](https://github.com/christophstrasen/pz-dream/actions/workflows/ci.yml)
+- [`DREAM`](https://github.com/christophstrasen/pz-dream) [![CI](https://github.com/christophstrasen/pz-dream/actions/workflows/ci.yml/badge.svg)](https://github.com/christophstrasen/pz-dream/actions/workflows/ci.yml)
   - Convenient "bundle" that requires all other modules.
   - Comes with extra examples and high level intro.
-- `WorldObserver` [![CI](https://github.com/christophstrasen/WorldObserver/actions/workflows/ci.yml/badge.svg)](https://github.com/christophstrasen/WorldObserver/actions/workflows/ci.yml)
+  - Repo name `pz-dream`
+- [`WorldObserver`](https://github.com/christophstrasen/WorldObserver) [![CI](https://github.com/christophstrasen/WorldObserver/actions/workflows/ci.yml/badge.svg)](https://github.com/christophstrasen/WorldObserver/actions/workflows/ci.yml)
   - A cooperative *world-sensing engine*.
-- `PromiseKeeper` [![CI](https://github.com/christophstrasen/PromiseKeeper/actions/workflows/ci.yml/badge.svg)](https://github.com/christophstrasen/PromiseKeeper/actions/workflows/ci.yml)
+- [`PromiseKeeper`](https://github.com/christophstrasen/PromiseKeeper) [![CI](https://github.com/christophstrasen/PromiseKeeper/actions/workflows/ci.yml/badge.svg)](https://github.com/christophstrasen/PromiseKeeper/actions/workflows/ci.yml)
   - A stateful situation-to-action orchestrator.
-- `SceneBuilder` [![CI](https://github.com/christophstrasen/SceneBuilder/actions/workflows/ci.yml/badge.svg)](https://github.com/christophstrasen/SceneBuilder/actions/workflows/ci.yml)
+- [`SceneBuilder`](https://github.com/christophstrasen/SceneBuilder) [![CI](https://github.com/christophstrasen/SceneBuilder/actions/workflows/ci.yml/badge.svg)](https://github.com/christophstrasen/SceneBuilder/actions/workflows/ci.yml)
   - A declarative scene composition framework.
 
 **Dependencies**
 
-`DREAMBase` [![CI](https://github.com/christophstrasen/DREAMBase/actions/workflows/ci.yml/badge.svg)](https://github.com/christophstrasen/DREAMBase/actions/workflows/ci.yml)
+- [`DREAMBase`](https://github.com/christophstrasen/DREAMBase) [![CI](https://github.com/christophstrasen/DREAMBase/actions/workflows/ci.yml/badge.svg)](https://github.com/christophstrasen/DREAMBase/actions/workflows/ci.yml)
   - A small “base library” mod for the DREAM ecosystem (Build 42). 
-  - dependency for All modules abov
-- `LQR` [![CI](https://github.com/christophstrasen/LQR/actions/workflows/ci.yml/badge.svg)](https://github.com/christophstrasen/LQR/actions/workflows/ci.yml)
+  - dependency for All modules above
+- [`LQR`](https://github.com/christophstrasen/LQR) [![CI](https://github.com/christophstrasen/LQR/actions/workflows/ci.yml/badge.svg)](https://github.com/christophstrasen/LQR/actions/workflows/ci.yml)
   - For expressing SQL‑like joins and queries over ReactiveX observable streams. 
+  - [`pz-lqr`](https://github.com/christophstrasen/pz-lqr) "wraps" it into mod-shape
   - dependency for `WorldObserver`
-- `reactivex` 
+- [`reactivex`](https://github.com/christophstrasen/lua-reactivex)
   - Gives Lua the power of Observables: data structures that represent a stream of values over time.
   - Handy for events, streams of data, asynchronous requests, and concurrency-like composition.
+  - [`pz-reactivex`](https://github.com/christophstrasen/pz-reactivex) "wraps" it into mod-shape
   - dependency for `WorldObserver`
 
 
