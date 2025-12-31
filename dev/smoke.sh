@@ -30,3 +30,9 @@ if [ "${#missing[@]}" -gt 0 ]; then
 fi
 
 (cd "$REPO_ROOT/external/WorldObserver" && SOURCE="$SOURCE" ./dev/smoke.sh)
+
+if [ -f "$REPO_ROOT/external/DREAMBase/dev/smoke.sh" ]; then
+  (cd "$REPO_ROOT/external/DREAMBase" && ./dev/smoke.sh)
+else
+  echo "[warn] missing DREAMBase smoke script: external/DREAMBase/dev/smoke.sh"
+fi
