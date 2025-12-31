@@ -23,7 +23,7 @@ Maintainer logbook: `logbook.md`.
   - Comes with extra examples and high level intro.
   - Repo name `pz-dream`
 - [`WorldObserver`](https://github.com/christophstrasen/WorldObserver) [![CI](https://github.com/christophstrasen/WorldObserver/actions/workflows/ci.yml/badge.svg)](https://github.com/christophstrasen/WorldObserver/actions/workflows/ci.yml)
-  - A cooperative *world-sensing engine*.
+  - A cooperative world-sensing engine.
 - [`PromiseKeeper`](https://github.com/christophstrasen/PromiseKeeper) [![CI](https://github.com/christophstrasen/PromiseKeeper/actions/workflows/ci.yml/badge.svg)](https://github.com/christophstrasen/PromiseKeeper/actions/workflows/ci.yml)
   - A stateful situation-to-action orchestrator.
 - [`SceneBuilder`](https://github.com/christophstrasen/SceneBuilder) [![CI](https://github.com/christophstrasen/SceneBuilder/actions/workflows/ci.yml/badge.svg)](https://github.com/christophstrasen/SceneBuilder/actions/workflows/ci.yml)
