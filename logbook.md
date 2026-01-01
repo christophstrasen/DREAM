@@ -42,7 +42,7 @@ This workspace exists so maintainers can co-develop the repos together (sync/wat
 - Reduced “bespoke heuristics” in the suite toolchain by fixing the `dev/watch-all.sh` runaway retrigger loop (asset rebuilding caused self-triggering).
 
 ### Difficulties / blockers
-- 
+
 
 ### Learnings
 - Prefer vanilla placement primitives when available (they encode Build 42 rules we don’t want to re-implement).
@@ -53,29 +53,14 @@ This workspace exists so maintainers can co-develop the repos together (sync/wat
 ## Day 2 — 2025-12-31 — DREAMBase becomes the suite baseline
 
 ### Progress highlights
-- Added **DREAMBase** as a first-class repo + mod (shared suite “base library”), wired into the workspace submodules and the standard `dev/` sync/watch/smoke workflow.
-- Implemented shared modules in DREAMBase (Lua 5.1 / Build 42 compatible):
-  - `DREAMBase/log` (delegates to `LQR/util/log` when present, otherwise provides a compatible fallback)
-  - `DREAMBase/util`, `DREAMBase/time_ms`, `DREAMBase/events`
-  - PZ interop helpers under `DREAMBase/pz/*` (e.g. defensive Java list access + safe method calls)
-  - `DREAMBase/test/bootstrap` for consistent headless/busted stubbing
-- Added a small busted unit test suite + CI for DREAMBase and adopted the same `busted --helper=tests/helper.lua ...` workflow across the suite.
-- Adopted DREAMBase across suite repos (PromiseKeeper, WorldObserver, SceneBuilder, DREAM meta-mod):
-  - `mod.info` now declares `require=\DREAMBase` where appropriate
-  - CI clones DREAMBase and runs DREAMBase tests as a dependency step
-  - runtime modules delegate shared concerns (time/events/util/logging) to DREAMBase
-- Removed remaining “optional DREAMBase” shims now that it is required:
-  - PromiseKeeper logging is a direct `require("DREAMBase/log")`
-  - WorldObserver helper wrappers are pure aliases to DREAMBase helpers (no legacy fallback bodies)
-  - tests bootstraps require `DREAMBase/test/bootstrap` directly (no `pcall`)
-- Fixed workspace + WorldObserver smoke tooling to correctly validate Workshop vs mods deployments (dependency roots now follow `SOURCE=workshop|mods`).
-- Standardized packaging/asset expectations:
-  - DREAMBase now ships an empty `common/` folder (layout parity with other mods)
-  - Updated DREAMBase SVG labels (“DREAM Base” / “DB”) and regenerated PNG assets.
+- Introduced **DREAMBase** as the suite base mod + repo and wired it into the workspace dev flow (`sync/watch/smoke`) + CI.
+- Centralized shared utilities in DREAMBase (`log`, `util`, `time_ms`, `events`, `pz/*`, `test/bootstrap`) and migrated suite repos to hard-require/import them.
+- Removed shim-only modules/exports and updated docs/workshop metadata to match (removed `PromiseKeeper/util`, `PromiseKeeper/time`, `SceneBuilder/util`, `SceneBuilder.util`, `WorldObserver/helpers/time`).
+- Fixed smoke tooling to validate both Workshop vs mods deploy trees; kept packaging parity and regenerated DREAMBase assets.
 
 ### Difficulties / blockers
-- Workshop smoke checks initially failed because some scripts still assumed dependencies lived under `~/Zomboid/mods`; this broke `require("DREAMBase/...")` in headless validation until we made dependency roots follow `SOURCE`.
-- Some repos’ default `busted tests` invocation fails without the helper because `package.path` isn’t set; we standardized on helper-based runs in CI and local workflows.
+- Workshop smoke checks and busted runs surfaced how easy it is to accidentally depend on implicit `package.path`; we standardized helper-based runs and made smoke tooling explicit about dependency roots (`SOURCE`).
+- Removing shim modules is intentionally breaking for any downstream code that required `PromiseKeeper/util`, `PromiseKeeper/time`, or `SceneBuilder/util`; we need to treat this as an API break (fine while early, but it must be communicated).
 
 ### Learnings
 - If a dependency is declared in `mod.info require=...`, “soft require + fallback” layers usually just hide real packaging issues; prefer hard requires and keep any delegation in the base layer (not in every consumer).
@@ -84,4 +69,24 @@ This workspace exists so maintainers can co-develop the repos together (sync/wat
 ### Major decisions
 - DREAMBase is the canonical home for suite-wide utilities; suite mods treat it as a required dependency rather than an optional convenience.
 - LQR stays unchanged; DREAMBase integrates by delegation (not by pushing cross-cutting changes into LQR).
-- Use a shared busted helper/bootstrap pattern for the whole suite to keep headless tests aligned with Project Zomboid packaging/require realities.
+- Use a shared busted helper/bootstrap pattern and drop backwards-compatibility shims early to keep headless tests aligned and avoid accidental legacy APIs.
+
+## Day 3 — 2026-01-01 — pz-dream examples and documentation work
+
+### Progress highlights
+- Built a combined WorldObserver + PromiseKeeper example in `pz-dream`: a “police zombie on road spawns a road cone (once per tile)” situation + action flow.
+- Added `square.floorMaterial` to square records and `isRoad()` convenience filtering to support “road” detection in user-facing examples.
+- Standardized wildcard “prefix%” matching across observations/helpers (e.g. outfits, floorMaterial) and documented the intended semantics.
+- Improved PromiseKeeper chance determinism by switching chance hashing to a suite-owned Murmur3 32-bit implementation in DREAMBase (better avalanche for adjacent keys vs previous mixing).
+
+### Difficulties / blockers
+- Build 42 “Floor Material” is not the floor texture name; the data surfaced by the in-game inspector required explicit square record support rather than inferring from sprite/texture.
+- Engine-side hash utilities (e.g. PZHash) were not reliably accessible from Lua in our test setup, so we could not depend on them for deterministic chance.
+
+### Learnings
+- “Walks over” is easiest to model as a join keyed by tile location with a time window; repeats on the same tile are expected and should be handled by PromiseKeeper policy + occurrence keying.
+- For demos, keep code direct and fail-fast (typical Zomboid mod style); add diagnostics via logging levels rather than defensive wrappers.
+
+### Major decisions
+- DREAMBase owns deterministic hashing primitives needed by multiple suite repos; avoid external hashing libs unless the engine exposes them cleanly to Lua.
+- `pz-dream` examples prioritize readability over “enterprise” defensive patterns; keep optional debug paths out of the main example code path.
