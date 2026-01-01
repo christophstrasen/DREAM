@@ -104,3 +104,24 @@ This workspace exists so maintainers can co-develop the repos together (sync/wat
 
 ### Major decisions
 - “One canonical developer workflow doc per repo”: `development.md` is the single developer-facing place for test/watch/sync commands; other docs should link to it instead of duplicating commands.
+
+## Day 4 — 2026-01-01 — Suite-wide luacheck + pre-commit parity
+
+### Progress highlights
+- Fixed all `luacheck` warnings in **WorldObserver** and **PromiseKeeper** (and verified unit tests pass).
+- Brought the remaining suite repos to a “CI can lint” baseline:
+  - Added missing `.luacheckrc` files (e.g. `pz-dream`, `pz-lqr`, `pz-reactivex`).
+  - Cleaned/adjusted upstream library payloads where needed (LQR + lua-reactivex) and rebuilt packaging payloads.
+- Enabled `luacheck` in CI across the full suite (including adding new CI workflows for `pz-lqr` and `pz-reactivex`).
+- Standardized local developer enforcement by adding/updating `.pre-commit-config.yaml` in every repo to mirror CI checks.
+
+### Difficulties / blockers
+- Some repos are packaging wrappers around upstream submodules; lint fixes must happen in the upstream payload and then be re-synced via `dev/build.sh` (otherwise they get overwritten).
+
+### Learnings
+- `luacheck` is not “just style”: it caught a real Lua scoping bug in LQR where a local constant was referenced before it was declared (would have fallen back to a nil global at runtime).
+- Keeping pre-commit hooks in parity with CI is the easiest way to avoid “works locally, fails in GitHub” churn.
+
+### Major decisions
+- Treat `luacheck` warnings as CI-breaking across suite repos (no “warnings-only” exceptions).
+- Use pre-commit as the primary local workflow guardrail; keep hook commands identical to CI per repo.

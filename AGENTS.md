@@ -48,9 +48,9 @@ Workspace-wide helpers:
 
 ## Tests (shared expectations)
 
-- If a repo has `busted` tests, run them when changing logic:
-  - WorldObserver: `busted tests`
-  - PromiseKeeper: `busted tests`
+- After Lua code changes, run the repo’s lint + unit tests (or `pre-commit run --all-files`):
+  - `luacheck ...` (see each repo’s `development.md` for the exact command)
+  - `busted --helper=tests/helper.lua tests/unit` (most repos)
 - After changes that affect packaging / `require()` paths / mod layout, run:
   - `DREAM-Workspace/dev/sync-all.sh`
   - `DREAM-Workspace/dev/smoke.sh`
