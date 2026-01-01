@@ -71,49 +71,35 @@ This workspace exists so maintainers can co-develop the repos together (sync/wat
 - LQR stays unchanged; DREAMBase integrates by delegation (not by pushing cross-cutting changes into LQR).
 - Use a shared busted helper/bootstrap pattern and drop backwards-compatibility shims early to keep headless tests aligned and avoid accidental legacy APIs.
 
-## Day 3 — 2026-01-01 — pz-dream examples and documentation work
+## Day 3 — 2026-01-01 — Examples + linting + workflow harmonization
 
 ### Progress highlights
-- Built a combined WorldObserver + PromiseKeeper example in `pz-dream`: a “police zombie on road spawns a road cone (once per tile)” situation + action flow.
-- Added `square.floorMaterial` to square records and `isRoad()` convenience filtering to support “road” detection in user-facing examples.
-- Standardized wildcard “prefix%” matching across observations/helpers (e.g. outfits, floorMaterial) and documented the intended semantics.
-- Improved PromiseKeeper chance determinism by switching chance hashing to a suite-owned Murmur3 32-bit implementation in DREAMBase (better avalanche for adjacent keys vs previous mixing).
-- Drafted a WorldObserver RFC for “record wrappers” to make record-helper ergonomics consistent in non-stream contexts (notably PromiseKeeper actions): `external/WorldObserver/docs_internal/drafts/record_wrappers.md`.
+- Built a combined WorldObserver + PromiseKeeper example in `pz-dream`: “police zombie on road spawns a road cone (once per tile)”.
+- Added `square.floorMaterial` to square records and `hasFloorMaterial("Road%")` convenience filtering for “road” detection in user-facing examples.
+- Standardized wildcard “prefix%” matching across helpers (e.g. outfits, floorMaterial) and documented intended semantics.
+- Improved PromiseKeeper chance determinism via suite-owned Murmur3 32-bit hashing in DREAMBase.
+- Drafted WorldObserver “record wrappers” RFC for record-helper ergonomics in non-stream contexts (PromiseKeeper actions).
+- Ran `luacheck` across the suite, fixed a DREAMBase CI `luacheck` failure, and standardized developer workflow docs into one `development.md` per repo (+ workspace-level `development.md`).
 
 ### Difficulties / blockers
-- Build 42 “Floor Material” is not the floor texture name; the data surfaced by the in-game inspector required explicit square record support rather than inferring from sprite/texture.
-- Engine-side hash utilities (e.g. PZHash) were not reliably accessible from Lua in our test setup, so we could not depend on them for deterministic chance.
+- Build 42 “Floor Material” is not the floor texture name; we needed explicit square record support rather than inferring from sprite/texture.
+- Engine-side hash utilities (e.g. PZHash) were not reliably accessible from Lua in our test setup.
 
-### Learnings
-- “Walks over” is easiest to model as a join keyed by tile location with a time window; repeats on the same tile are expected and should be handled by PromiseKeeper policy + occurrence keying.
-- For demos, keep code direct and fail-fast (typical Zomboid mod style); add diagnostics via logging levels rather than defensive wrappers.
-
-### Major decisions
-- DREAMBase owns deterministic hashing primitives needed by multiple suite repos; avoid external hashing libs unless the engine exposes them cleanly to Lua.
-- `pz-dream` examples prioritize readability over “enterprise” defensive patterns; keep optional debug paths out of the main example code path.
-
-## Day 3 — 2026-01-01 (continued) — Linting + dev workflow harmonization
-
-### Progress highlights
-- Ran `luacheck` across suite repos that ship a `.luacheckrc` and captured current warning counts (DREAMBase/SceneBuilder clean; PromiseKeeper small; WorldObserver large).
-- Fixed the DREAMBase CI `luacheck` failure (unused `k1` assignment in `DREAMBase/util.lua`).
-- Standardized “how to test/watch/sync” into a single `development.md` per repo (and added a workspace-level `development.md` for the multi-repo flow), reducing duplicated instructions across READMEs/internal docs.
-
-### Difficulties / blockers
-- `luacheck` currently fails CI on warnings (exit code 1), so expanding CI coverage to PromiseKeeper/WorldObserver will require either (a) reducing warnings, or (b) agreeing on an “errors-only” policy first.
-
-### Major decisions
-- “One canonical developer workflow doc per repo”: `development.md` is the single developer-facing place for test/watch/sync commands; other docs should link to it instead of duplicating commands.
+### Learnings / decisions
+- “Walks over” is easiest to model as a join keyed by tile location with a time window; repeats are expected and should be handled by PromiseKeeper policy + occurrence keying.
+- Keep one canonical developer workflow doc per repo (`development.md`) and link to it instead of duplicating commands.
 
 ## Day 4 — 2026-01-01 — Suite-wide luacheck + pre-commit parity
 
 ### Progress highlights
 - Fixed all `luacheck` warnings in **WorldObserver** and **PromiseKeeper** (and verified unit tests pass).
+- Implemented WorldObserver record wrappers (whitelisted per-family record decoration) and pinned the wrapped surface in docs + tests.
 - Brought the remaining suite repos to a “CI can lint” baseline:
   - Added missing `.luacheckrc` files (e.g. `pz-dream`, `pz-lqr`, `pz-reactivex`).
   - Cleaned/adjusted upstream library payloads where needed (LQR + lua-reactivex) and rebuilt packaging payloads.
 - Enabled `luacheck` in CI across the full suite (including adding new CI workflows for `pz-lqr` and `pz-reactivex`).
 - Standardized local developer enforcement by adding/updating `.pre-commit-config.yaml` in every repo to mirror CI checks.
+- Improved the workspace local dev loop (`dev/watch-all.sh`): single-run startup, compact per-repo status lines (tests/lint/assets/sync/smoke), and clearer rerun markers.
 
 ### Difficulties / blockers
 - Some repos are packaging wrappers around upstream submodules; lint fixes must happen in the upstream payload and then be re-synced via `dev/build.sh` (otherwise they get overwritten).
