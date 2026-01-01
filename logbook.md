@@ -78,6 +78,7 @@ This workspace exists so maintainers can co-develop the repos together (sync/wat
 - Added `square.floorMaterial` to square records and `isRoad()` convenience filtering to support “road” detection in user-facing examples.
 - Standardized wildcard “prefix%” matching across observations/helpers (e.g. outfits, floorMaterial) and documented the intended semantics.
 - Improved PromiseKeeper chance determinism by switching chance hashing to a suite-owned Murmur3 32-bit implementation in DREAMBase (better avalanche for adjacent keys vs previous mixing).
+- Drafted a WorldObserver RFC for “record wrappers” to make record-helper ergonomics consistent in non-stream contexts (notably PromiseKeeper actions): `external/WorldObserver/docs_internal/drafts/record_wrappers.md`.
 
 ### Difficulties / blockers
 - Build 42 “Floor Material” is not the floor texture name; the data surfaced by the in-game inspector required explicit square record support rather than inferring from sprite/texture.
