@@ -91,3 +91,16 @@ This workspace exists so maintainers can co-develop the repos together (sync/wat
 ### Major decisions
 - DREAMBase owns deterministic hashing primitives needed by multiple suite repos; avoid external hashing libs unless the engine exposes them cleanly to Lua.
 - `pz-dream` examples prioritize readability over “enterprise” defensive patterns; keep optional debug paths out of the main example code path.
+
+## Day 3 — 2026-01-01 (continued) — Linting + dev workflow harmonization
+
+### Progress highlights
+- Ran `luacheck` across suite repos that ship a `.luacheckrc` and captured current warning counts (DREAMBase/SceneBuilder clean; PromiseKeeper small; WorldObserver large).
+- Fixed the DREAMBase CI `luacheck` failure (unused `k1` assignment in `DREAMBase/util.lua`).
+- Standardized “how to test/watch/sync” into a single `development.md` per repo (and added a workspace-level `development.md` for the multi-repo flow), reducing duplicated instructions across READMEs/internal docs.
+
+### Difficulties / blockers
+- `luacheck` currently fails CI on warnings (exit code 1), so expanding CI coverage to PromiseKeeper/WorldObserver will require either (a) reducing warnings, or (b) agreeing on an “errors-only” policy first.
+
+### Major decisions
+- “One canonical developer workflow doc per repo”: `development.md` is the single developer-facing place for test/watch/sync commands; other docs should link to it instead of duplicating commands.

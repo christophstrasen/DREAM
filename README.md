@@ -57,22 +57,4 @@ Note: avoid `--recursive` unless you explicitly want nested submodules inside th
 
 ## Local deploy
 
-One-off deploy all mods into `~/Zomboid/Workshop`:
-
-```bash
-./dev/sync-all.sh
-```
-
-Watch (single terminal):
-
-```bash
-./dev/watch-all.sh
-```
-
-Run loader smoke test (after syncing):
-
-```bash
-./dev/smoke.sh
-```
-
-Tip: you can switch the destination with `TARGET=mods` if you prefer `~/Zomboid/mods`.
+See `development.md` (workflow) and `DREAM_dev_standards.md` (standards/conventions).
