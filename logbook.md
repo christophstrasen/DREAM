@@ -111,3 +111,24 @@ This workspace exists so maintainers can co-develop the repos together (sync/wat
 ### Major decisions
 - Treat `luacheck` warnings as CI-breaking across suite repos (no “warnings-only” exceptions).
 - Use pre-commit as the primary local workflow guardrail; keep hook commands identical to CI per repo.
+
+## Day 5 — 2026-01-02 — Marriage story demo (WO + PK + SceneBuilder)
+
+### Progress highlights
+- Shipped and in-engine validated the DREAM example `examples/marriage_story.lua`:
+  - When a church room is seen, spawn a “marriage” zombie scene (bride, groom, priest, guests).
+  - When the player enters the church and the marriage cast is present, play a one-shot wedding “song” (placeholder text for now).
+- WorldObserver gained cross-repo enabling capabilities for this style of story:
+  - Shared “player room changed” sensor fan-out to both `rooms` and `players` fact families.
+  - `onPlayerChangeRoom` scope available for `players` interests.
+  - Multi-family interest declarations (`type = { "rooms", "players", ... }`) to subscribe cleanly without forcing combined payload shapes.
+- SceneBuilder placement quality improvements:
+  - Added `centroid` and `centroidFreeOrMidair` resolver strategies to bias placement towards the “room center” (centroid of actual room squares), ordered center-out in concentric rings.
+- Updated workspace docs to reflect the new end-to-end example and how the three modules compose (see `README.md`).
+
+### Difficulties / blockers
+- Java `long` IDs (e.g. `RoomDef:getID()`) can exceed Lua number precision; RoomDef hydration now prefers coordinate-based lookup (parse `roomLocation` and use metaGrid) rather than relying on numeric IDs.
+
+### Learnings / decisions
+- “Player in room” + “cast present in room” is best modeled as an explicit derived-stream join keyed by `roomLocation`, with PromiseKeeper using `occurranceKey` for idempotence.
+- Next placement exploration: “spawn near sprite” where authors can specify a sprite prefix (e.g. `table%`) as an anchor-like target within the room.

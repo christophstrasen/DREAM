@@ -1,2 +1,4 @@
 .vscode/DREAM-Workspace.local.code-workspace
-
+*.drawio.bkp
+*.drawio.dtmp
+*.DS_Store

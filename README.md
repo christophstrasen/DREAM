@@ -1,21 +1,28 @@
-# DREAM-Workspace
+# DREAM - Declarative REactive Authoring Modules
 
-Maintainer convenience repo for co-developing the DREAM mod family in one place.
+A suite of high-level lua modules for Project Zomboid [42SP] designed to help authors structure world-driven logic through composable, declarative building blocks.
 
-This repo is **not** a mod. It contains the mod repos as git submodules and provides:
-- VS Code workspace settings (mirrors your current setup style)
-- one-command sync to `~/Zomboid/Workshop` (default)
-- one-terminal watcher that re-syncs all mods on change
+---
 
-## Documentation scope
+## Core Goals & Design Principles
 
-- **User-facing suite overview + curated examples:** `external/pz-dream/` (DREAM meta-mod), and its Workshop item.
-- **Module-specific docs and APIs:** in each module repo under `external/<RepoName>/`.
-- **Maintainer coordination:** this repo (scripts, submodule policy, dev standards, and the workspace logbook).
+1. **Optionality by design**
+   Each module is designed to stand on its own. They can be used independently or combined as needed — adoption is incremental, not all-or-nothing.
 
-Maintainer logbook: `logbook.md`.
+2. **A shared structure for world-driven logic**
+   DREAM is built around a separation that mirrors how world-driven logic unfolds — sensing situations, gating or remembering outcomes, and acting on the world.
+   Concepts like **observations**, **promises**, and **scenes** are expressed directly in APIs and lifecycles, encouraging a consistent vocabulary without prescribing a single way of working.
 
-## Included repos
+3. **Higher-order building blocks designed for composition and reuse**
+   DREAM offers building blocks that capture recurring patterns at a higher level than raw events or tick logic.
+   By composing these blocks, authoring logic *can* become more compact and readable, with the goal of supporting faster iteration and more maintainable features over time.
+
+4. **Advanced control without mandatory complexity**
+   DREAM aims to work at a high level by default, while still exposing policy layers that advanced users can extend, adjust, or integrate into custom systems as needed.
+
+---
+
+## Included
 
 **Main modules**
 - [`DREAM`](https://github.com/christophstrasen/pz-dream) [![CI](https://github.com/christophstrasen/pz-dream/actions/workflows/ci.yml/badge.svg)](https://github.com/christophstrasen/pz-dream/actions/workflows/ci.yml)
@@ -44,6 +51,80 @@ Maintainer logbook: `logbook.md`.
   - [`pz-reactivex`](https://github.com/christophstrasen/pz-reactivex) "wraps" it into mod-shape
   - dependency for `WorldObserver`
 
+--- 
+
+## Overview
+
+![WorldObserver architecture diagram](diagrams/architecture_full.png) 
+
+---
+
+## How the Pieces Fit Together
+
+At a high level, DREAM supports a common flow found in world-driven gameplay systems:
+
+> **Something becomes true in the world → a decision is made → something happens**
+
+DREAM does not require this structure, but it is designed to *support and encourage* it by providing dedicated modules for each stage.
+
+### 1. WorldObserver — Sensing the world
+
+**WorldObserver** focuses on *observing* the game world and turning raw state into meaningful signals.
+
+Instead of manually scanning tiles, entities, or events in isolation, mods declare *interest* in certain conditions (for example: nearby corpses, entered buildings, changing environments) and receive **observation streams** as those conditions evolve.
+WorldObserver is designed to support **collaborative sensing across multiple mods**, consolidating shared observation work and helping avoid redundant scans that can negatively impact performance.
+
+These streams represent *situations becoming true or changing over time*, and can be consumed directly or combined into higher-level signals.
+
+### 2. PromiseKeeper — Gating, scheduling, and remembering
+
+**PromiseKeeper** sits at the decision boundary.
+
+Given a situation (from WorldObserver, a vanilla event, or custom logic), it answers questions like:
+
+* *Should this run at all?*
+* *Should it only run once?*
+* *How often is it allowed to run?*
+* *Should it persist across reloads?*
+
+Promises encode these decisions explicitly and persist their outcomes, helping avoid duplicate triggers, accidental re-execution, or scattered state flags.
+
+### 3. SceneBuilder — Acting on the world
+
+**SceneBuilder** is responsible for *materializing outcomes* in the game world.
+
+It provides a declarative way to author scenes — collections of world changes such as corpses, containers, items, zombies, or environmental details — with built-in support for fallback behavior, placement logic, and determinism where desired.
+
+Scenes are typically triggered once a promise is fulfilled, but SceneBuilder can also be used independently wherever structured world authoring is needed.
+
+### Putting it together
+
+In practice, many features follow this pattern:
+
+1. **Observe** a situation in the world (WorldObserver)
+2. **Decide** if and when something should happen (PromiseKeeper)
+3. **Materialize** a result in the world (SceneBuilder)
+
+The diagrams above illustrate this flow both in simplified form and in full detail. Importantly, DREAM does not force mods into this pipeline — each module can be used on its own — but when combined, they form a coherent authoring model for complex, world-driven features.
+
+---
+
+## DREAM-Workspace (this Repo)
+
+This is the maintainer convenience repo for co-developing the DREAM mod family in one place.
+
+This repo is **not** a mod. It contains the mod repos as git submodules and provides:
+- VS Code workspace settings (mirrors your current setup style)
+- one-command sync to `~/Zomboid/Workshop` (default)
+- one-terminal watcher that re-syncs all mods on change
+
+## Documentation scope
+
+- **User-facing suite overview + curated examples:** `external/pz-dream/` (DREAM meta-mod), and its Workshop item.
+- **Module-specific docs and APIs:** in each module repo under `external/<RepoName>/`.
+- **Maintainer coordination:** this repo (scripts, submodule policy, dev standards, and the workspace logbook).
+
+Maintainer logbook: `logbook.md`.
 
 ## Clone
 
