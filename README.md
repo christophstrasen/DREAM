@@ -1,30 +1,31 @@
 # DREAM - Declarative REactive Authoring Modules
 
-A suite of high-level lua modules for Project Zomboid [42SP] designed to help authors structure world-driven logic through composable, declarative building blocks.
+A set of high-level lua modules for Project Zomboid [42SP] intended to help authors structure world-driven logic through composable, declarative building blocks.
 
 ---
 
-## Core Goals & Design Principles
+#### Core Goals & Design Principles
 
-1. **Optionality by design**
-   Each module is designed to stand on its own. They can be used independently or combined as needed — adoption is incremental, not all-or-nothing.
+1. **Optionality**  
+   Each module is designed to stand on its own. They can be used independently or combined as needed.
 
-2. **A shared structure for world-driven logic**
-   DREAM is built around a separation that mirrors how world-driven logic unfolds — sensing situations, gating or remembering outcomes, and acting on the world.
-   Concepts like **observations**, **promises**, and **scenes** are expressed directly in APIs and lifecycles, encouraging a consistent vocabulary without prescribing a single way of working.
+2. **Opinionated Separation of Concerns**  
+   Following the philosophy of reactive, world state–driven logic — sensing situations, deciding when actions are allowed to occur, and achieving desired effects on the world.  
+   Concepts like observations, promises, and scenes are expressed in APIs and lifecycles, encouraging a shared vocabulary without prescribing a single way of working.
 
-3. **Higher-order building blocks designed for composition and reuse**
-   DREAM offers building blocks that capture recurring patterns at a higher level than raw events or tick logic.
-   By composing these blocks, authoring logic *can* become more compact and readable, with the goal of supporting faster iteration and more maintainable features over time.
+3. **Composability & Reusability**  
+   Offering building blocks that capture recurring patterns at a higher level than raw events or tick logic.  
+   By composing these blocks, authoring logic can become more compact and readable, with the goal of supporting faster iteration and more maintainable features over time.
 
-4. **Advanced control without mandatory complexity**
-   DREAM aims to work at a high level by default, while still exposing policy layers that advanced users can extend, adjust, or integrate into custom systems as needed.
+4. **Control & Extensibility**  
+   Working out of the box, while exposing settings and public interfaces for adjustment, extension through registration, and patching where needed.
 
 ---
 
 ## Included Mods
 
 **Main**
+
 - [`DREAM`](https://github.com/christophstrasen/pz-dream) [![CI](https://github.com/christophstrasen/pz-dream/actions/workflows/ci.yml/badge.svg)](https://github.com/christophstrasen/pz-dream/actions/workflows/ci.yml)
   - Convenient "bundle" that requires all other modules. (Repo name `pz-dream`)
   - Comes with extra examples and high level intro.
@@ -51,6 +52,16 @@ A suite of high-level lua modules for Project Zomboid [42SP] designed to help au
   - dependency for `WorldObserver`
 
 --- 
+
+## Is this for you?
+
+This suite is intended for experienced Project Zomboid modders.
+
+It may be worth exploring if you are working on larger or longer-lived mods and find yourself wanting more structure as features interact and accumulate.
+
+It is **not** intended as an introduction to modding. If you are new to Project Zomboid modding or still learning Lua fundamentals, this is likely not the right starting point.
+
+The modules are under active development, currently focused on single-player, and may change as ideas are refined. While individual parts are usable on their own, the overall approach has not yet been validated in large, production-scale mods.
 
 ## Overview
 
@@ -113,6 +124,7 @@ The diagrams above illustrate this flow both in simplified form and in full deta
 This is the maintainer convenience repo for co-developing the DREAM mod family in one place.
 
 This repo is **not** a mod. It contains the mod repos as git submodules and provides:
+
 - VS Code workspace settings (mirrors your current setup style)
 - one-command sync to `~/Zomboid/Workshop` (default)
 - one-terminal watcher that re-syncs all mods on change

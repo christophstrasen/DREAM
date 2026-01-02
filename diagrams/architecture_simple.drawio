@@ -1,6 +1,6 @@
 <mxfile host="Electron" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.0.3 Chrome/140.0.7339.249 Electron/38.7.1 Safari/537.36" version="29.0.3">
   <diagram name="Page-1" id="wBgGjPjeenXuCCwRR5bW">
-    <mxGraphModel dx="1021" dy="1337" grid="1" gridSize="10" guides="0" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="670" dy="923" grid="1" gridSize="10" guides="0" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -171,8 +171,8 @@
         <mxCell id="6K9FoEKWm_O1q3_gMrY6-3" value="&lt;div style=&quot;line-height: 100%;&quot;&gt;&lt;font style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 8px;&quot;&gt;Your own subscription code&lt;/font&gt;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;line-height: 100%;&quot;&gt;&lt;font style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 8px;&quot;&gt;(check each observation on the spot and decide)&lt;/font&gt;&lt;/font&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
           <mxGeometry x="290" y="340" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="6K9FoEKWm_O1q3_gMrY6-5" value="&lt;div style=&quot;line-height: 100%;&quot;&gt;&lt;font style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 8px;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;Your&amp;nbsp;&lt;/span&gt;Action&lt;/font&gt;&lt;/font&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
-          <mxGeometry x="350" y="620" width="60" height="20" as="geometry" />
+        <mxCell id="6K9FoEKWm_O1q3_gMrY6-5" value="&lt;div style=&quot;line-height: 100%;&quot;&gt;&lt;font style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 8px;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;Your&amp;nbsp;&lt;/span&gt;Actions . . .&amp;nbsp;&lt;/font&gt;&lt;/font&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+          <mxGeometry x="340" y="620" width="80" height="20" as="geometry" />
         </mxCell>
         <mxCell id="6K9FoEKWm_O1q3_gMrY6-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#82b366;fillColor=#d5e8d4;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="6K9FoEKWm_O1q3_gMrY6-3" target="6K9FoEKWm_O1q3_gMrY6-5" edge="1">
           <mxGeometry relative="1" as="geometry">
@@ -328,7 +328,7 @@
         <mxCell id="6K9FoEKWm_O1q3_gMrY6-37" value="&lt;div style=&quot;line-height: 100%;&quot;&gt;&lt;font style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 8px;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;Your&amp;nbsp;&lt;/span&gt;Actions . . .&lt;/font&gt;&lt;/font&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
           <mxGeometry x="90" y="550" width="80" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="orOMhunS0AyvjcE0W-la-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.75;entryY=1;entryDx=0;entryDy=0;fillColor=#d5e8d4;strokeColor=#82b366;" edge="1" parent="1" source="6K9FoEKWm_O1q3_gMrY6-40" target="6K9FoEKWm_O1q3_gMrY6-20">
+        <mxCell id="orOMhunS0AyvjcE0W-la-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.75;entryY=1;entryDx=0;entryDy=0;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" source="6K9FoEKWm_O1q3_gMrY6-40" target="6K9FoEKWm_O1q3_gMrY6-20" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="6K9FoEKWm_O1q3_gMrY6-40" value="&lt;div style=&quot;line-height: 100%;&quot;&gt;&lt;font style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 8px;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;Your&amp;nbsp;&lt;/span&gt;Promises . . .&lt;/font&gt;&lt;/font&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
@@ -346,16 +346,16 @@
         <mxCell id="6K9FoEKWm_O1q3_gMrY6-53" value="&lt;div&gt;&lt;span style=&quot;font-size: 8px;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;span style=&quot;font-size: 8px;&quot;&gt;&lt;div&gt;Run code coupled with your subscription&lt;span style=&quot;font-size: 8px;&quot;&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 8px;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;Or make promises that refer to Situations and Actions.&lt;/span&gt;&lt;div&gt;&lt;span style=&quot;font-size: 8px;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;div&gt;&lt;span style=&quot;font-size: 8px;&quot;&gt;&lt;i&gt;&quot;&lt;u style=&quot;&quot;&gt;When this&lt;/u&gt; happens,&amp;nbsp;&lt;u&gt;run that&lt;/u&gt; but only once every&amp;nbsp; 5 seconds.&lt;u&gt; Remember it&lt;/u&gt; across reloads.&quot;&lt;/i&gt;&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontColor=#454545;" parent="1" vertex="1">
           <mxGeometry x="430" y="538" width="180" height="77" as="geometry" />
         </mxCell>
-        <mxCell id="orOMhunS0AyvjcE0W-la-4" value="&lt;div style=&quot;line-height: 100%;&quot;&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;font style=&quot;font-size: 10px; line-height: 100%;&quot;&gt;SceneBuilder&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;font style=&quot;font-size: 8px; line-height: 100%;&quot;&gt;(Act on&amp;nbsp;&lt;/font&gt;&lt;/span&gt;&lt;span style=&quot;font-size: 8px; background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;reproducable &lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); font-size: 8px;&quot;&gt;scene instruction)&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
+        <mxCell id="orOMhunS0AyvjcE0W-la-4" value="&lt;div style=&quot;line-height: 100%;&quot;&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;font style=&quot;font-size: 10px; line-height: 100%;&quot;&gt;SceneBuilder&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;font style=&quot;font-size: 8px; line-height: 100%;&quot;&gt;(Act on&amp;nbsp;&lt;/font&gt;&lt;/span&gt;&lt;span style=&quot;font-size: 8px; background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;reproducable &lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); font-size: 8px;&quot;&gt;scene instruction)&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" parent="1" vertex="1">
           <mxGeometry x="110" y="660" width="110" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="orOMhunS0AyvjcE0W-la-5" value="&lt;div style=&quot;line-height: 100%;&quot;&gt;&lt;font style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 8px;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;[SB] YourScenes . . .&lt;/span&gt;&lt;/font&gt;&lt;/font&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+        <mxCell id="orOMhunS0AyvjcE0W-la-5" value="&lt;div style=&quot;line-height: 100%;&quot;&gt;&lt;font style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 8px;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;[SB] YourScenes . . .&lt;/span&gt;&lt;/font&gt;&lt;/font&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
           <mxGeometry x="170" y="620" width="80" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="orOMhunS0AyvjcE0W-la-6" value="World State" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;" vertex="1" parent="1">
+        <mxCell id="orOMhunS0AyvjcE0W-la-6" value="World State" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;" parent="1" vertex="1">
           <mxGeometry x="80" y="740" width="300" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="orOMhunS0AyvjcE0W-la-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fillColor=#f5f5f5;strokeColor=#666666;" edge="1" parent="1" target="orOMhunS0AyvjcE0W-la-6" source="6K9FoEKWm_O1q3_gMrY6-5">
+        <mxCell id="orOMhunS0AyvjcE0W-la-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fillColor=#f5f5f5;strokeColor=#666666;" parent="1" source="6K9FoEKWm_O1q3_gMrY6-5" target="orOMhunS0AyvjcE0W-la-6" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="410" y="740" as="sourcePoint" />
             <Array as="points">
@@ -364,7 +364,7 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="orOMhunS0AyvjcE0W-la-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fillColor=#f5f5f5;strokeColor=#666666;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" target="orOMhunS0AyvjcE0W-la-6" source="6K9FoEKWm_O1q3_gMrY6-37">
+        <mxCell id="orOMhunS0AyvjcE0W-la-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fillColor=#f5f5f5;strokeColor=#666666;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="6K9FoEKWm_O1q3_gMrY6-37" target="orOMhunS0AyvjcE0W-la-6" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="100" y="670" as="sourcePoint" />
             <mxPoint x="100" y="770" as="targetPoint" />
@@ -375,18 +375,18 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="orOMhunS0AyvjcE0W-la-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.75;entryDx=0;entryDy=0;fillColor=#d5e8d4;strokeColor=#82b366;exitX=0;exitY=0.75;exitDx=0;exitDy=0;" edge="1" parent="1" target="orOMhunS0AyvjcE0W-la-5" source="6K9FoEKWm_O1q3_gMrY6-5">
+        <mxCell id="orOMhunS0AyvjcE0W-la-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.75;entryDx=0;entryDy=0;fillColor=#d5e8d4;strokeColor=#82b366;exitX=0;exitY=0.75;exitDx=0;exitDy=0;" parent="1" source="6K9FoEKWm_O1q3_gMrY6-5" target="orOMhunS0AyvjcE0W-la-5" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="350" y="735" as="sourcePoint" />
             <mxPoint x="350" y="850" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="orOMhunS0AyvjcE0W-la-10" value="&lt;font style=&quot;font-size: 8px;&quot;&gt;execute&lt;/font&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBorderColor=#FFFFFF;" vertex="1" connectable="0" parent="orOMhunS0AyvjcE0W-la-9">
+        <mxCell id="orOMhunS0AyvjcE0W-la-10" value="&lt;font style=&quot;font-size: 8px;&quot;&gt;execute&lt;/font&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBorderColor=#FFFFFF;" parent="orOMhunS0AyvjcE0W-la-9" vertex="1" connectable="0">
           <mxGeometry x="0.0419" y="1" relative="1" as="geometry">
             <mxPoint x="7" y="-2" as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="orOMhunS0AyvjcE0W-la-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.25;entryDx=0;entryDy=0;fillColor=#f5f5f5;strokeColor=#666666;exitX=0.25;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" target="orOMhunS0AyvjcE0W-la-5" source="6K9FoEKWm_O1q3_gMrY6-20">
+        <mxCell id="orOMhunS0AyvjcE0W-la-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.25;entryDx=0;entryDy=0;fillColor=#f5f5f5;strokeColor=#666666;exitX=0.25;exitY=1;exitDx=0;exitDy=0;" parent="1" source="6K9FoEKWm_O1q3_gMrY6-20" target="orOMhunS0AyvjcE0W-la-5" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="295" y="670" as="sourcePoint" />
             <mxPoint x="310" y="750" as="targetPoint" />
@@ -395,12 +395,12 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="orOMhunS0AyvjcE0W-la-12" value="&lt;font style=&quot;font-size: 8px;&quot;&gt;execute&lt;/font&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="orOMhunS0AyvjcE0W-la-11">
+        <mxCell id="orOMhunS0AyvjcE0W-la-12" value="&lt;font style=&quot;font-size: 8px;&quot;&gt;execute&lt;/font&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="orOMhunS0AyvjcE0W-la-11" vertex="1" connectable="0">
           <mxGeometry x="0.0419" y="1" relative="1" as="geometry">
             <mxPoint x="-11" y="-10" as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="orOMhunS0AyvjcE0W-la-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fillColor=#f5f5f5;strokeColor=#666666;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="orOMhunS0AyvjcE0W-la-4" target="orOMhunS0AyvjcE0W-la-6">
+        <mxCell id="orOMhunS0AyvjcE0W-la-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fillColor=#f5f5f5;strokeColor=#666666;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="orOMhunS0AyvjcE0W-la-4" target="orOMhunS0AyvjcE0W-la-6" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="200" y="840" as="sourcePoint" />
             <mxPoint x="200" y="860" as="targetPoint" />
@@ -410,12 +410,12 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="orOMhunS0AyvjcE0W-la-14" value="&lt;font style=&quot;font-size: 8px;&quot;&gt;achieve desire effect&lt;/font&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBorderColor=#FFFFFF;" vertex="1" connectable="0" parent="orOMhunS0AyvjcE0W-la-13">
+        <mxCell id="orOMhunS0AyvjcE0W-la-14" value="&lt;font style=&quot;font-size: 8px;&quot;&gt;achieve desire effect&lt;/font&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBorderColor=#FFFFFF;" parent="orOMhunS0AyvjcE0W-la-13" vertex="1" connectable="0">
           <mxGeometry x="0.0419" y="1" relative="1" as="geometry">
             <mxPoint x="30" y="-1" as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="orOMhunS0AyvjcE0W-la-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fillColor=#f5f5f5;strokeColor=#666666;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="orOMhunS0AyvjcE0W-la-5">
+        <mxCell id="orOMhunS0AyvjcE0W-la-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fillColor=#f5f5f5;strokeColor=#666666;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="orOMhunS0AyvjcE0W-la-5" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="200" y="750" as="sourcePoint" />
             <mxPoint x="140" y="660" as="targetPoint" />
@@ -425,15 +425,15 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="orOMhunS0AyvjcE0W-la-16" value="&lt;span style=&quot;font-size: 8px;&quot;&gt;Build Scene&lt;/span&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="orOMhunS0AyvjcE0W-la-15">
+        <mxCell id="orOMhunS0AyvjcE0W-la-16" value="&lt;span style=&quot;font-size: 8px;&quot;&gt;Build Scene&lt;/span&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="orOMhunS0AyvjcE0W-la-15" vertex="1" connectable="0">
           <mxGeometry x="0.0419" y="1" relative="1" as="geometry">
             <mxPoint y="10" as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="orOMhunS0AyvjcE0W-la-20" value="&lt;div&gt;&lt;span style=&quot;font-size: 8px;&quot;&gt;Act on world-state directly&lt;/span&gt;&lt;span style=&quot;font-size: 8px;&quot;&gt;&lt;/span&gt;&lt;/div&gt;&lt;span style=&quot;font-size: 8px;&quot;&gt;&lt;div&gt;&lt;span style=&quot;font-size: 8px;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;Or spawn pre-composed scenes (items, corpses, Zombies) with SceneBuilder&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontColor=#454545;" vertex="1" parent="1">
+        <mxCell id="orOMhunS0AyvjcE0W-la-20" value="&lt;div&gt;&lt;span style=&quot;font-size: 8px;&quot;&gt;Act on world-state directly&lt;/span&gt;&lt;span style=&quot;font-size: 8px;&quot;&gt;&lt;/span&gt;&lt;/div&gt;&lt;span style=&quot;font-size: 8px;&quot;&gt;&lt;div&gt;&lt;span style=&quot;font-size: 8px;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;Or spawn pre-composed scenes (items, corpses, Zombies) with SceneBuilder&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontColor=#454545;" parent="1" vertex="1">
           <mxGeometry x="430" y="650" width="180" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="orOMhunS0AyvjcE0W-la-21" value="&lt;b&gt;DREAM Architecture (Simplified)&lt;/b&gt;&lt;div&gt;&lt;font style=&quot;font-size: 8px;&quot;&gt;Showing components related to WorldObserver [WO], PromiseKeeper [PK] and SceneBuilder [SB]&lt;/font&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=top;whiteSpace=wrap;rounded=0;spacingBottom=0;spacingTop=-7;" vertex="1" parent="1">
+        <mxCell id="orOMhunS0AyvjcE0W-la-21" value="&lt;b&gt;DREAM Architecture (Simplified)&lt;/b&gt;&lt;div&gt;&lt;font style=&quot;font-size: 8px;&quot;&gt;Showing components related to WorldObserver [WO], PromiseKeeper [PK] and SceneBuilder [SB]&lt;/font&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=top;whiteSpace=wrap;rounded=0;spacingBottom=0;spacingTop=-7;" parent="1" vertex="1">
           <mxGeometry x="10" y="10" width="360" height="30" as="geometry" />
         </mxCell>
       </root>
