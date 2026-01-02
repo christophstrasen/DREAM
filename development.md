@@ -1,6 +1,6 @@
-# DREAM-Workspace — Development
+# DREAM — Development
 
-This repo is a maintainer convenience workspace. Commands below assume you are in the `DREAM-Workspace/` root.
+This repo is a maintainer convenience workspace. Commands below assume you are in the `DREAM/` root.
 
 ## Sync (deploy to Project Zomboid)
 

@@ -1,4 +1,4 @@
-# DREAM-Workspace — Agent Guide
+# DREAM — Agent Guide
 
 This repo is a **maintainer convenience workspace** for co-developing the DREAM suite via git submodules.
 
@@ -7,7 +7,7 @@ The goal of this file is to capture the **shared** best-practice patterns across
 ## Priority and scope
 
 - **Priority:** system > developer > `AGENTS.md` > `.aicontext/*` > task instructions > file-local comments.
-- **Scope:** this file applies to `DREAM-Workspace/` itself.
+- **Scope:** this file applies to `DREAM/` itself.
 - **Submodules:** when editing code inside `external/*`, treat that repo’s own guidance as authoritative:
   - Load that repo’s `.aicontext/context.md` (if present).
   - Obey that repo’s `AGENTS.md` (if present).
@@ -52,8 +52,8 @@ Workspace-wide helpers:
   - `luacheck ...` (see each repo’s `development.md` for the exact command)
   - `busted --helper=tests/helper.lua tests/unit` (most repos)
 - After changes that affect packaging / `require()` paths / mod layout, run:
-  - `DREAM-Workspace/dev/sync-all.sh`
-  - `DREAM-Workspace/dev/smoke.sh`
+  - `DREAM/dev/sync-all.sh`
+  - `DREAM/dev/smoke.sh`
 
 ## Git hygiene (shared)
 

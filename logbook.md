@@ -1,4 +1,4 @@
-# DREAM-Workspace Logbook
+# DREAM Logbook
 
 This is a maintainer-facing logbook for the DREAM suite.
 

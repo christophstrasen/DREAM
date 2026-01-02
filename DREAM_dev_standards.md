@@ -14,7 +14,7 @@ The DREAM suite is split into individual mods so each can be developed and shipp
 - `LQR` (`pz-lqr`) — query/ingest engine for Lua, packaged as a PZ mod.
 - `DREAM` (`pz-dream`) — meta-mod that depends on the other mods and ships examples/material.
 
-This repo (`DREAM-Workspace`) is a **maintainer convenience repo** that pulls all mod repos in as git submodules and provides “sync all” + “watch all”.
+This repo (`DREAM`) is a **maintainer convenience repo** that pulls all mod repos in as git submodules and provides “sync all” + “watch all”.
 
 ## Canonical on-disk layout
 
@@ -43,11 +43,11 @@ To keep “how do I test/watch/sync” consistent and discoverable, each repo do
 - Workspace (this repo): `development.md`
 - Individual repos: `external/<RepoName>/development.md`
 
-## Git submodules in DREAM-Workspace
+## Git submodules in DREAM
 
 This workspace uses submodules in two layers:
 
-1) **Workspace layer:** `DREAM-Workspace/.gitmodules` pins each mod repo under `external/<RepoName>/`.
+1) **Workspace layer:** `DREAM/.gitmodules` pins each mod repo under `external/<RepoName>/`.
 2) **Packaging layer (inside some repos):** packaging repos pin upstream library sources as *their own* nested submodules:
    - `external/pz-reactivex` pins `external/lua-reactivex` (upstream library)
    - `external/pz-lqr` pins `external/LQR` (upstream library)

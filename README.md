@@ -108,7 +108,7 @@ The diagrams above illustrate this flow both in simplified form and in full deta
 
 ---
 
-## DREAM-Workspace (this Repo)
+## DREAM (this Repo)
 
 This is the maintainer convenience repo for co-developing the DREAM mod family in one place.
 
@@ -128,8 +128,8 @@ Maintainer logbook: `logbook.md`.
 ## Clone
 
 ```bash
-git clone git@github.com:christophstrasen/DREAM-Workspace.git
-cd DREAM-Workspace
+git clone git@github.com:christophstrasen/DREAM.git
+cd DREAM
 git submodule update --init
 ```
 
