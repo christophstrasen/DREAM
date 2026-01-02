@@ -56,7 +56,7 @@ A set of high-level lua modules for Project Zomboid [42SP] intended to help auth
 ## See it in action
 
   * ensure you have `DREAM` enabled in your savegame.
-  * run `d = require("dream_examples"); d:help()` or check out the comment block at the top of [dream_examples.lua](https://github.com/christophstrasen/pz-dream/blob/main/Contents/mods/DREAM/42/media/lua/shared/dream_examples.lua)
+  * run `d = require("dream_examples"); d:list()` or check out the comment block at the top of [dream_examples.lua](https://github.com/christophstrasen/pz-dream/blob/main/Contents/mods/DREAM/42/media/lua/shared/dream_examples.lua)
 
 ## Is this for you?
 
