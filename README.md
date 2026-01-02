@@ -4,6 +4,10 @@ A set of high-level lua modules for Project Zomboid [42SP] intended to help auth
 
 ---
 
+[Steam Workshop → [42SP] DREAM — Declarative REactive Authoring Modules](https://steamcommunity.com/sharedfiles/filedetails/?id=3637575202)
+
+---
+
 #### Core Goals & Design Principles
 
 1. **Optionality**  
