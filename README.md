@@ -22,13 +22,12 @@ A suite of high-level lua modules for Project Zomboid [42SP] designed to help au
 
 ---
 
-## Included
+## Included Mods
 
-**Main modules**
+**Main**
 - [`DREAM`](https://github.com/christophstrasen/pz-dream) [![CI](https://github.com/christophstrasen/pz-dream/actions/workflows/ci.yml/badge.svg)](https://github.com/christophstrasen/pz-dream/actions/workflows/ci.yml)
-  - Convenient "bundle" that requires all other modules.
+  - Convenient "bundle" that requires all other modules. (Repo name `pz-dream`)
   - Comes with extra examples and high level intro.
-  - Repo name `pz-dream`
 - [`WorldObserver`](https://github.com/christophstrasen/WorldObserver) [![CI](https://github.com/christophstrasen/WorldObserver/actions/workflows/ci.yml/badge.svg)](https://github.com/christophstrasen/WorldObserver/actions/workflows/ci.yml)
   - A cooperative world-sensing engine.
 - [`PromiseKeeper`](https://github.com/christophstrasen/PromiseKeeper) [![CI](https://github.com/christophstrasen/PromiseKeeper/actions/workflows/ci.yml/badge.svg)](https://github.com/christophstrasen/PromiseKeeper/actions/workflows/ci.yml)
@@ -36,7 +35,7 @@ A suite of high-level lua modules for Project Zomboid [42SP] designed to help au
 - [`SceneBuilder`](https://github.com/christophstrasen/SceneBuilder) [![CI](https://github.com/christophstrasen/SceneBuilder/actions/workflows/ci.yml/badge.svg)](https://github.com/christophstrasen/SceneBuilder/actions/workflows/ci.yml)
   - A declarative scene composition framework.
 
-**Dependencies**
+**Supporting Dependencies**
 
 - [`DREAMBase`](https://github.com/christophstrasen/DREAMBase) [![CI](https://github.com/christophstrasen/DREAMBase/actions/workflows/ci.yml/badge.svg)](https://github.com/christophstrasen/DREAMBase/actions/workflows/ci.yml)
   - A small “base library” mod for the DREAM ecosystem (Build 42). 
