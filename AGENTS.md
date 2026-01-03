@@ -60,3 +60,7 @@ Workspace-wide helpers:
 - Prefer small, focused commits.
 - Avoid destructive history operations (no `git reset --hard` / force-push) unless explicitly requested.
 - For packaging repos, prefer contributing changes to upstream libraries where applicable, then bump the submodule pointer.
+
+## Steam Workshop descriptions
+
+When creating or updating any `workshop.txt` description, follow `steam_workshop_guidance.md` and stick to its “assumed safe” BBCode subset.

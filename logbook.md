@@ -35,7 +35,7 @@ This workspace exists so maintainers can co-develop the repos together (sync/wat
 - DREAM (meta-mod, user-facing suite entrypoint): https://github.com/christophstrasen/pz-dream
 - WorldObserver logbook (module-internal): https://github.com/christophstrasen/WorldObserver/blob/main/docs_internal/logbook.md
 
-## Day 1 — 2025-12-30 (continued)
+## Day 1 — Continued
 
 ### Progress highlights
 - SceneBuilder Build 42.13 compatibility work: surface-aware placement now uses `sq:has("IsTable")` + `IsoObject:getSurfaceOffsetNoTable()` (and drops deprecated `Val("Surface")` usage).
@@ -50,7 +50,7 @@ This workspace exists so maintainers can co-develop the repos together (sync/wat
 ### Major decisions
 - For the suite, treat engine flags and engine-derived offsets as authoritative (e.g. `IsTable` / `getSurfaceOffsetNoTable()`), and keep custom datasets only for what the engine doesn’t provide (safe X/Y placement boxes).
 
-## Day 2 — 2025-12-31 — DREAMBase becomes the suite baseline
+## Day 2 — DREAMBase becomes the suite baseline
 
 ### Progress highlights
 - Introduced **DREAMBase** as the suite base mod + repo and wired it into the workspace dev flow (`sync/watch/smoke`) + CI.
@@ -71,7 +71,7 @@ This workspace exists so maintainers can co-develop the repos together (sync/wat
 - LQR stays unchanged; DREAMBase integrates by delegation (not by pushing cross-cutting changes into LQR).
 - Use a shared busted helper/bootstrap pattern and drop backwards-compatibility shims early to keep headless tests aligned and avoid accidental legacy APIs.
 
-## Day 3 — 2026-01-01 — Examples + linting + workflow harmonization
+## Day 3 — Examples + linting + workflow harmonization
 
 ### Progress highlights
 - Built a combined WorldObserver + PromiseKeeper example in `pz-dream`: “police zombie on road spawns a road cone (once per tile)”.
@@ -89,7 +89,7 @@ This workspace exists so maintainers can co-develop the repos together (sync/wat
 - “Walks over” is easiest to model as a join keyed by tile location with a time window; repeats are expected and should be handled by PromiseKeeper policy + occurrence keying.
 - Keep one canonical developer workflow doc per repo (`development.md`) and link to it instead of duplicating commands.
 
-## Day 4 — 2026-01-01 — Suite-wide luacheck + pre-commit parity
+## Day 4 — Suite-wide luacheck + pre-commit parity
 
 ### Progress highlights
 - Fixed all `luacheck` warnings in **WorldObserver** and **PromiseKeeper** (and verified unit tests pass).
@@ -112,7 +112,7 @@ This workspace exists so maintainers can co-develop the repos together (sync/wat
 - Treat `luacheck` warnings as CI-breaking across suite repos (no “warnings-only” exceptions).
 - Use pre-commit as the primary local workflow guardrail; keep hook commands identical to CI per repo.
 
-## Day 5 — 2026-01-02 — Marriage story demo (WO + PK + SceneBuilder)
+## Day 5 — Marriage story demo (WO + PK + SceneBuilder)
 
 ### Progress highlights
 - Shipped and in-engine validated the DREAM example `examples/marriage_story.lua`:
@@ -125,6 +125,14 @@ This workspace exists so maintainers can co-develop the repos together (sync/wat
 - SceneBuilder placement quality improvements:
   - Added `centroid` and `centroidFreeOrMidair` resolver strategies to bias placement towards the “room center” (centroid of actual room squares), ordered center-out in concentric rings.
 - Updated workspace docs to reflect the new end-to-end example and how the three modules compose (see `README.md`).
+- Published the full DREAM suite on Steam Workshop:
+  - DREAM — Declarative REactive Authoring Modules [42SP] — https://steamcommunity.com/sharedfiles/filedetails/?id=3637575202
+  - WorldObserver [42SP] — https://steamcommunity.com/sharedfiles/filedetails/?id=3637573373
+  - PromiseKeeper [42SP] — https://steamcommunity.com/sharedfiles/filedetails/?id=3637573743
+  - SceneBuilder — https://steamcommunity.com/sharedfiles/filedetails/?id=3594105442
+  - DREAMBase [42] — https://steamcommunity.com/sharedfiles/filedetails/?id=3637543051
+  - LQR [42] — https://steamcommunity.com/sharedfiles/filedetails/?id=3637571449
+  - reactivex [42] — https://steamcommunity.com/sharedfiles/filedetails/?id=3637570496
 
 ### Difficulties / blockers
 - Java `long` IDs (e.g. `RoomDef:getID()`) can exceed Lua number precision; RoomDef hydration now prefers coordinate-based lookup (parse `roomLocation` and use metaGrid) rather than relying on numeric IDs.
@@ -132,3 +140,22 @@ This workspace exists so maintainers can co-develop the repos together (sync/wat
 ### Learnings / decisions
 - “Player in room” + “cast present in room” is best modeled as an explicit derived-stream join keyed by `roomLocation`, with PromiseKeeper using `occurranceKey` for idempotence.
 - Next placement exploration: “spawn near sprite” where authors can specify a sprite prefix (e.g. `table%`) as an anchor-like target within the room.
+
+## Day 6 — 2026-01-03 — Documentation + release polishing
+
+### Progress highlights
+- Standardized Steam Workshop description formatting across the suite: `workshop.txt` descriptions now mirror the respective README structure using Steam BBCode (headings, lists, links, quotes, code blocks, images).
+- Added a shared Steam BBCode “assumed safe subset” reference for maintainers: `steam_workshop_guidance.md`.
+- Added “Overview” diagrams to Workshop descriptions where appropriate:
+  - DREAM: suite architecture diagram.
+  - PromiseKeeper: orchestration overview diagram.
+- Normalized mod metadata across all published mods:
+  - `version=` replaced with `modversion=0.1.1`
+  - `author=Karmachameleon` and `url=<GitHub repo>` added (with upstream URLs for LQR and lua-reactivex)
+  - `versionMin=42.13` applied consistently.
+
+### Difficulties / blockers
+- Steam Workshop markup is BBCode-like but inconsistent: list items require `[*]`, `[noparse]` is unreliable for links, and strikethrough is not consistently supported.
+
+### Learnings / decisions
+- Treat Workshop descriptions as “BBCode-first” documents: translate README intent with headings/lists/code/quote and avoid relying on unsupported tags.
