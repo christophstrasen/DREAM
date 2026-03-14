@@ -4,21 +4,14 @@ This repo is a maintainer convenience workspace. Commands below assume you are i
 
 ## Sync (deploy to Project Zomboid)
 
-Default target is the Workshop wrapper folder (`~/Zomboid/Workshop`):
+Deploy to the Workshop wrapper folder (`~/Zomboid/Workshop`):
 
 ```bash
 ./dev/sync-all.sh
 ```
 
-Optional: deploy to the mods folder (`~/Zomboid/mods`):
-
-```bash
-TARGET=mods ./dev/sync-all.sh
-```
-
 Common environment variables:
 - `PZ_WORKSHOP_DIR` (default: `$HOME/Zomboid/Workshop`)
-- `PZ_MODS_DIR` (default: `$HOME/Zomboid/mods`)
 
 ## Watch (auto re-sync on change)
 
@@ -29,7 +22,6 @@ Common environment variables:
 Options:
 
 ```bash
-TARGET=mods ./dev/watch-all.sh
 WATCH_MODE=repo ./dev/watch-all.sh
 ```
 
@@ -41,11 +33,7 @@ Requires `inotifywait` (`inotify-tools`).
 ./dev/smoke.sh
 ```
 
-If you deploy to `mods` and want the smoke script to read from there:
-
-```bash
-SOURCE=mods ./dev/smoke.sh
-```
+`./dev/smoke.sh` validates Workshop deployments.
 
 ## Unit tests
 

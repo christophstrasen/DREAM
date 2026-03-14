@@ -5,7 +5,6 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 REPO_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
 cd "$REPO_ROOT"
 
-TARGET="${TARGET:-workshop}" # mods|workshop
 WATCH_MODE="${WATCH_MODE:-payload}" # payload|repo
 VERBOSE="${VERBOSE:-0}"
 RUN_ONCE="${RUN_ONCE:-0}" # 1 = run pipeline once, then exit (no watch)
@@ -283,7 +282,7 @@ run_sync() {
     return 0
   fi
 
-  local script="$root/dev/sync-$TARGET.sh"
+  local script="$root/dev/sync-workshop.sh"
   if [ ! -f "$script" ]; then
     echo "[error] missing sync script for $repo: $script"
     STATUS_SYNC["$repo"]="fail"
@@ -321,15 +320,15 @@ run_smoke() {
   local db_smoke="-"
 
   if [ -f "$wo_root/dev/smoke.sh" ]; then
-    if run_cmd "WorldObserver" "smoke" "$wo_root" env "SOURCE=$TARGET" ./dev/smoke.sh; then
+    if run_cmd "WorldObserver" "smoke" "$wo_root" env "SOURCE=workshop" ./dev/smoke.sh; then
       wo_smoke="ok"
     else
       wo_smoke="fail"
     fi
   fi
 
-  if [ "$TARGET" = "mods" ] && [ -f "$db_root/dev/smoke.sh" ]; then
-    if run_cmd "DREAMBase" "smoke" "$db_root" ./dev/smoke.sh; then
+  if [ -f "$db_root/dev/smoke.sh" ]; then
+    if run_cmd "DREAMBase" "smoke" "$db_root" env "SOURCE=workshop" ./dev/smoke.sh; then
       db_smoke="ok"
     else
       db_smoke="fail"
@@ -341,11 +340,9 @@ run_smoke() {
   STATUS_SMOKE["pz-reactivex"]="$wo_smoke"
   STATUS_SMOKE["pz-lqr"]="$wo_smoke"
 
-  if [ "$TARGET" = "mods" ]; then
-    STATUS_SMOKE["DREAMBase"]="$db_smoke"
-    STATUS_SMOKE["PromiseKeeper"]="$db_smoke"
-    STATUS_SMOKE["SceneBuilder"]="$db_smoke"
-  fi
+  STATUS_SMOKE["DREAMBase"]="$db_smoke"
+  STATUS_SMOKE["PromiseKeeper"]="$db_smoke"
+  STATUS_SMOKE["SceneBuilder"]="$db_smoke"
 }
 
 print_status_lines() {
@@ -435,7 +432,7 @@ if ! command -v inotifywait >/dev/null; then
   exit 1
 fi
 
-echo "Watching all mods (TARGET=$TARGET, WATCH_MODE=$WATCH_MODE)…"
+echo "Watching all mods (TARGET=workshop, WATCH_MODE=$WATCH_MODE)…"
 print_run_header
 run_pipeline
 

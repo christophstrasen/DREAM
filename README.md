@@ -135,7 +135,7 @@ This is the maintainer convenience repo for co-developing the DREAM mod family i
 This repo is **not** a mod. It contains the mod repos as git submodules and provides:
 
 - VS Code workspace settings (mirrors your current setup style)
-- one-command sync to `~/Zomboid/Workshop` (default)
+- one-command sync to `~/Zomboid/Workshop` (canonical target)
 - one-terminal watcher that re-syncs all mods on change
 
 ## Documentation scope

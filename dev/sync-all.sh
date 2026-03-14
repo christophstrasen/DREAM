@@ -5,8 +5,6 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 REPO_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
 cd "$REPO_ROOT"
 
-TARGET="${TARGET:-workshop}" # mods|workshop
-
 ensure_nested_submodules() {
   # The packaging repos use upstream sources as nested submodules.
   # We initialize only the required nested submodules (not a full --recursive).
@@ -24,7 +22,7 @@ run_sync() {
   local repo="$1"
   local label="$2"
 
-  local script="$REPO_ROOT/external/$repo/dev/sync-$TARGET.sh"
+  local script="$REPO_ROOT/external/$repo/dev/sync-workshop.sh"
   if [ ! -f "$script" ]; then
     echo "[error] missing $label script: $script"
     exit 1
@@ -43,4 +41,4 @@ run_sync "pz-reactivex" "reactivex"
 run_sync "pz-lqr" "LQR"
 run_sync "pz-dream" "DREAM"
 
-echo "[ok] synced all (TARGET=$TARGET)"
+echo "[ok] synced all (TARGET=workshop)"

@@ -36,15 +36,14 @@ All DREAM mods in this workspace ship a standardized `dev/` toolchain:
 
 - `dev/build-assets.sh` exports `512.svg`, `256.svg`, `64.svg` to `poster.png`, `preview.png`, `icon_64.png`.
   - Asset exports are incremental (skip if outputs are newer than SVGs); use `FORCE_ASSETS=1` to force a rebuild.
-- `dev/sync-workshop.sh` deploys to `~/Zomboid/Workshop` (default workflow).
-- `dev/sync-mods.sh` exists as an optional alternative (set `TARGET=mods` for watchers).
-- `dev/watch.sh` watches and re-syncs on change (defaults: `TARGET=workshop`, `WATCH_MODE=payload`).
+- `dev/sync-workshop.sh` deploys to `~/Zomboid/Workshop` (canonical workflow).
+- `dev/watch.sh` watches and re-syncs on change (defaults: Workshop target + `WATCH_MODE=payload`).
 
 Workspace-wide helpers:
 
-- `./dev/sync-all.sh` deploys all mods (default: Workshop).
+- `./dev/sync-all.sh` deploys all mods to `~/Zomboid/Workshop`.
 - `./dev/watch-all.sh` watches all mods and re-syncs all on change.
-- `./dev/smoke.sh` runs the suite loader smoke check (via WorldObserver’s smoke script).
+- `./dev/smoke.sh` runs the suite loader smoke check against Workshop deployments.
 
 ## Tests (shared expectations)
 
